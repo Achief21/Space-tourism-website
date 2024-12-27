@@ -1,0 +1,212 @@
+
+.technology{
+    margin-top: 170px;
+    padding: 48px 0px 48px 165px;
+    
+
+    @include respond-to(lg) {
+        margin-top: 100px;
+        padding: 40px 0;
+    }
+
+    @include respond-to(sm) {
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        padding:20px 0;
+        align-items: center;
+
+    }
+
+    h4 {
+        font-size: 28px;
+        letter-spacing: 4px;
+        font-weight: lighter;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+
+
+        @include respond-to(lg) {
+            font-size: 20px;
+            letter-spacing: 15%;
+            padding: 40px;
+        }
+
+        @include respond-to(sm) {
+            font-size: 16px;
+            letter-spacing: 15%;
+            text-align: center;
+        }
+
+        span {
+            letter-spacing: 4.72px;
+            padding-right: 24px;
+            color: rgba(255, 255, 255, 25%);
+            font-weight: bold;
+        }
+    }
+
+    .content{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+
+
+        @include respond-to(lg) {
+            flex-direction: column-reverse;
+
+
+            .image{
+                width: 100vw;
+
+                img{
+                    width: 100%;
+                }
+            }
+        }
+
+
+
+
+        .explanation{
+            display: flex;
+            width: 635px;
+            gap: 32px;
+
+
+
+            @include respond-to(lg) {
+                display: grid;
+                width: 688px;
+                text-align: center;
+
+            }
+
+            @include respond-to(sm) {
+                width: 100%;
+            }
+
+            .explanation-2{
+
+                @include respond-to(lg) {
+                    padding-left: 88px;
+                    padding-right: 88px;
+                }
+                @include respond-to(sm) {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+
+                h4{
+                    font-size: 32px;
+                    color: rgba(255, 255, 255, 50.42%);
+                    font-family: Bellefair;
+
+                    @include respond-to(lg) {
+                        font-size: 24px;
+                    }
+                    @include respond-to(sm) {
+                        font-size: 18px;
+                    }
+                }
+
+                h2{
+                    font-size: 56px;
+                    text-transform: uppercase;
+                    font-weight: lighter;
+                    font-family: Bellefair;
+
+                    @include respond-to(lg) {
+                        font-size: 40px;
+                    }
+                    @include respond-to(sm) {
+                        font-size: 24px;
+                    }
+                }
+
+                p{
+                    color:#D0D6F9;
+                    font-size: 22px;
+                    font-family: Barlow;
+                    line-height: 180%;
+
+
+                    @include respond-to(lg) {
+                        font-size: 20px;
+                    }
+
+                    @include respond-to(sm) {
+                        font-size: 18px;
+
+                    }
+                }
+            }
+
+            ul{
+                list-style-type: none;
+                
+                @include respond-to(lg) {
+                    display: flex;
+                    justify-content: center;
+                    gap: 16px;
+                }
+
+                li{
+                    width: 80px;
+                    height: 80px;
+                    margin-bottom: 32px;
+                    border: 2px solid rgba(255, 255, 255, 25%) ;
+                    border-radius: 50%;
+
+                    @include respond-to(lg) {
+                        width:56px;
+                        height:56px;
+                    }
+                    @include respond-to(sm) {
+                        width:40px;
+                        height:40px;
+                    }
+                    a{
+                        color: #fff;
+                        text-decoration: none;
+                        font-size: 32px;
+                        font-family: Bellefair;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50%;
+                        @include respond-to(lg) {
+                            font-size: 24px;
+
+                        }
+                        @include respond-to(sm) {
+                            font-size: 18px;
+                        }
+
+
+                        &:hover{
+                            color: #0B0D17;
+                            background-color: rgba(255, 255, 255, 70%);
+                        }
+                        &:active{
+                            color: #0B0D17;
+                            background-color: #fff;
+                        }
+
+                            &.show{
+                                background-color: #fff;
+                                color: #0B0D17;
+
+                            }
+                    }
+                }
+
+              
+            }
+        }
+    }
+
+}

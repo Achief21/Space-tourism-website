@@ -1,0 +1,65 @@
+@import "./navbar", "./homepage", "./destination", "./crew", "./technology";
+
+
+
+/* ||RESET */
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    font: inherit;
+}
+
+/* ||FONT */
+
+@font-face {
+    font-family: Barlow;
+    src: url(/assets/fonts/Barlow_Condensed/BarlowCondensed-ExtraLight.ttf);
+
+}
+
+@font-face {
+    font-family: Barlow-light;
+    src: url(/assets/fonts/Barlow-Regular.ttf);
+}
+
+@font-face {
+    font-family: Bellefair;
+    src: url(/assets/fonts/Bellefair-Regular.ttf)
+}
+
+
+html {
+    scroll-behavior: smooth;
+    font-family: Barlow;
+    color: #fff;
+    height: 100vh;
+}
+
+body{
+    transition: background-image 0.3s ease-in-out;
+
+    background-color: #0B0D17;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: opacity 0.5s ease; 
+    opacity: 0;
+
+
+}
+
+
