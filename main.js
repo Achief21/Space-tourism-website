@@ -124,6 +124,8 @@ document.addEventListener("keydown", (event) => {
 //curent page style
 document.addEventListener("DOMContentLoaded", () => {
   let currentPath = window.location.pathname
+
+  console.log("Current Path Before Normalization:", currentPath);
 const links = document.querySelectorAll("a"); // Select all links
 
 
@@ -143,6 +145,7 @@ if (currentPath.startsWith("/technology-")) {
   currentPath = "/technology-vehicle.html"
 }
 
+  console.log("Normalized Path:", currentPath); // Debugging
 // Remove 'active' class from all links first to prevent multiple active states
 links.forEach((link) => {
   link.classList.remove("active");
@@ -154,6 +157,8 @@ links.forEach((link) => {
 
   // Check if the current page path matches the link's href
   if (currentPath === linkPath || currentPath.includes(linkPath)) {
+
+    console.log(`Active Link Found: ${linkPath}`); // Debugging
     link.classList.add("active");  
   }
 });
