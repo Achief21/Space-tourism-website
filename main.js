@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Normalize the path based on your custom conditions
   if (currentPath === "/" || currentPath === "") {
-    currentPath = "/index.html";
+    currentPath = "/index.html"; // Ensure homepage gets correctly mapped
   }
 
   if (currentPath.startsWith("/destination-")) {
@@ -158,8 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let linkPath = link.getAttribute("href");
 
     // Ensure linkPath has .html extension if necessary
-    if (!linkPath.endsWith(".html")) {
-      linkPath += ".html";
+    if (linkPath === "/") {
+      linkPath = "/index.html"; // For homepage link, ensure it points to /index.html
     }
 
     console.log(`Checking Link: ${linkPath} against Current Path: ${currentPath}`);
@@ -171,6 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
 
 
