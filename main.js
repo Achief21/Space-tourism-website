@@ -125,11 +125,8 @@ document.addEventListener("keydown", (event) => {
 document.addEventListener("DOMContentLoaded", () => {
   let currentPath = window.location.pathname;
 
-  console.log("Current Path Before Normalization:", currentPath);
-
-  // Normalize the path based on your custom conditions
   if (currentPath === "/" || currentPath === "") {
-    currentPath = "/index.html"; // Ensure homepage gets correctly mapped
+    currentPath = "/index.html"; 
   }
 
   if (currentPath.startsWith("/destination-")) {
@@ -144,33 +141,29 @@ document.addEventListener("DOMContentLoaded", () => {
     currentPath = "/technology-vehicle.html";
   }
 
-  console.log("Normalized Path:", currentPath);
 
-  const links = document.querySelectorAll("a"); // Select all links
+  const links = document.querySelectorAll("a"); 
 
-  // Remove 'active' class from all links first to prevent multiple active states
+  
   links.forEach((link) => {
     link.classList.remove("active");
   });
 
-  // Loop through each link and check for exact match
+
   links.forEach((link) => {
     let linkPath = link.getAttribute("href");
 
-    // Ensure linkPath has .html extension if necessary
+  
     if (linkPath === "/") {
-      linkPath = "/index.html"; // For homepage link, ensure it points to /index.html
+      linkPath = "/index.html";
     }
-    // Add .html to linkPath if it's not already there
+   
     if (!linkPath.endsWith(".html")) {
       linkPath += ".html";
     }
 
-    console.log(`Checking Link: ${linkPath} against Current Path: ${currentPath}`);
-
-    // Check if the current page path matches the link's href
+    
     if (currentPath === linkPath) {
-      console.log(`Active Link Found: ${linkPath}`);
       link.classList.add("active");  
     }
   });
