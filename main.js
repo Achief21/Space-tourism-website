@@ -156,9 +156,9 @@ links.forEach((link) => {
   const linkPath = link.getAttribute("href");
 
   // Check if the current page path matches the link's href
-  if (currentPath === linkPath) {
+  if (currentPath === linkPath || currentPath.includes(linkPath)) {
 
-    console.log(`Active Link Found: ${linkPath}`); // Debugging
+      console.log(`Active Link Found: ${linkPath}`);
     link.classList.add("active");  
   }
 });
