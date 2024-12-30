@@ -129,9 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
 const links = document.querySelectorAll("a"); // Select all links
 
 
-if (currentPath === "/" || currentPath === "/index.html") {
-  currentPath = "/index.html";
-}
 
 if (currentPath.startsWith("/destination-")) {
   currentPath = "/destination-moon.html"
