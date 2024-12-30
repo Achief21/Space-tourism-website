@@ -155,7 +155,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Loop through each link and check for exact match
   links.forEach((link) => {
-    const linkPath = link.getAttribute("href");
+    let linkPath = link.getAttribute("href");
+
+    // Ensure linkPath has .html extension if necessary
+    if (!linkPath.endsWith(".html")) {
+      linkPath += ".html";
+    }
+
     console.log(`Checking Link: ${linkPath} against Current Path: ${currentPath}`);
 
     // Check if the current page path matches the link's href
