@@ -161,6 +161,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (linkPath === "/") {
       linkPath = "/index.html"; // For homepage link, ensure it points to /index.html
     }
+    // Add .html to linkPath if it's not already there
+    if (!linkPath.endsWith(".html")) {
+      linkPath += ".html";
+    }
 
     console.log(`Checking Link: ${linkPath} against Current Path: ${currentPath}`);
 
