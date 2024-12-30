@@ -123,7 +123,7 @@ document.addEventListener("keydown", (event) => {
 
 //curent page style
 document.addEventListener("DOMContentLoaded", () => {
-  let currentPath = window.location.pathname
+  let currentPath = window.location.pathname.replace(/\/$/, "");
 
   console.log("Current Path Before Normalization:", currentPath);
 const links = document.querySelectorAll("a"); // Select all links
@@ -156,7 +156,7 @@ links.forEach((link) => {
   const linkPath = link.getAttribute("href");
 
   // Check if the current page path matches the link's href
-  if (currentPath === linkPath || currentPath.includes(linkPath)) {
+  if (currentPath === linkPath) {
 
       console.log(`Active Link Found: ${linkPath}`);
     link.classList.add("active");  
