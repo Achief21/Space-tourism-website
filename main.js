@@ -122,7 +122,7 @@ document.addEventListener("keydown", (event) => {
 
 
 //curent page style
-document.addEventListener("DOMContentLoaded", () => {
+
 
   let currentPath = window.location.pathname;
 
@@ -157,7 +157,7 @@ links.forEach((link) => {
     link.classList.add("active");  
   }
 });
-});
+
 
 
 
