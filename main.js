@@ -123,7 +123,9 @@ document.addEventListener("keydown", (event) => {
 
 //curent page style
 document.addEventListener("DOMContentLoaded", () => {
-  let currentPath = window.location.pathname.replace(/\/$/, "");
+
+  let currentPath = window.location.pathname;
+  currentPath = window.location.pathname.replace(/\/$/, "");
 
   console.log("Current Path Before Normalization:", currentPath);
 const links = document.querySelectorAll("a"); // Select all links
