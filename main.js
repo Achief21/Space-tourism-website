@@ -122,42 +122,49 @@ document.addEventListener("keydown", (event) => {
 
 
 //curent page style
-
-
+document.addEventListener("DOMContentLoaded", () => {
   let currentPath = window.location.pathname;
 
-const links = document.querySelectorAll("a"); // Select all links
+  console.log("Current Path Before Normalization:", currentPath);
 
-
-
-if (currentPath.startsWith("/destination-")) {
-  currentPath = "/destination-moon.html"
-}
-
-if (currentPath.startsWith("/crew-")) {
-  currentPath = "/crew-commander.html"
-}
-
-if (currentPath.startsWith("/technology-")) {
-  currentPath = "/technology-vehicle.html"
-}
-
-
-// Remove 'active' class from all links first to prevent multiple active states
-links.forEach((link) => {
-  link.classList.remove("active");
-});
-
-// Loop through each link
-links.forEach((link) => {
-  const linkPath = link.getAttribute("href");
-
-  // Check if the current page path matches the link's href
-  if (currentPath === linkPath || currentPath.includes(linkPath)) {
-    link.classList.add("active");  
+  // Normalize the path based on your custom conditions
+  if (currentPath === "/" || currentPath === "") {
+    currentPath = "/index.html";
   }
-});
 
+  if (currentPath.startsWith("/destination-")) {
+    currentPath = "/destination-moon.html";
+  }
+
+  if (currentPath.startsWith("/crew-")) {
+    currentPath = "/crew-commander.html";
+  }
+
+  if (currentPath.startsWith("/technology-")) {
+    currentPath = "/technology-vehicle.html";
+  }
+
+  console.log("Normalized Path:", currentPath);
+
+  const links = document.querySelectorAll("a"); // Select all links
+
+  // Remove 'active' class from all links first to prevent multiple active states
+  links.forEach((link) => {
+    link.classList.remove("active");
+  });
+
+  // Loop through each link and check for exact match
+  links.forEach((link) => {
+    const linkPath = link.getAttribute("href");
+    console.log(`Checking Link: ${linkPath} against Current Path: ${currentPath}`);
+
+    // Check if the current page path matches the link's href
+    if (currentPath === linkPath) {
+      console.log(`Active Link Found: ${linkPath}`);
+      link.classList.add("active");  
+    }
+  });
+});
 
 
 
